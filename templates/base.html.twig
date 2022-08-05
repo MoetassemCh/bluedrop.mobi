@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+<meta charset="UTF-8" name="viewport" content="width=device-width">
+
 		<title>
 			{% block title %}Welcome!
 			{% endblock %}
@@ -10,63 +11,96 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 		<link href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+
+
 	</head>
 
-	<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-<nav class="pt-6 mt-12 ml-16 flex flex-wrap items-center">
-
-			<a href="{{path('app_home')}}" class="gap-3 items-center flex flex-row">
-				<img src="{{asset('build/images/logo.0bc07af2.png')}}" alt="" class="w-10 h-10">
-				<div>
-<span class="text-2xl font-semibold">
+	<body class=" overflow-x-hidden">
+<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
 
 
-						bluedrop.
-					</span>
-<span class="text-2xl font-normal">
+		<nav class="container relative mx-auto p-6">
+			<div class="flex items-center justify-between space-x-20 my-6">
+				<div class="z-30">
+					<a href="{{path('app_home')}}" class="gap-3 items-center  flex flex-row ">
+						<img src="{{asset('build/images/logo.0bc07af2.png')}}" alt="" class="w-10 h-10">
+						<div>
+							<span class="text-2xl text-color font-semibold">
+								bluedrop.
+							</span>
+							<span class="text-2xl font-normal">
 
-						mobi
-					</span>
-				</div>
-			</a>
-<button data-collapse-toggle="navbar-default" type="button"
- class=" flex items-center px-3 p-3 py-2 border rounded text-teal-200 border-teal-400 lg:hidden hover:text-black hover:border-white ml-auto"
-aria-controls="navbar-default" aria-expanded="false">
-
-				<svg class="fill-current h-3 w-3" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-					<title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-			</button>
-<div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navbar-default">
-
-
-				<div class="lg:inline-flex lg:flex-row lg:ml-auto flex flex-col">
-
-<a  class="lg:inline-flex lg:w-auto px-3 py-2 rounded font-semibold text-base" href="{{path('app_presentation')}}">Présentation</a>
-
-
-
-
-<a class="lg:inline-flex lg:w-auto px-3 py-2 rounded font-semibold text-base" href="">Fonctionnalités</a>
-
-
-<a class="lg:inline-flex lg:w-auto px-3 py-2 rounded font-semibold text-base" href="">Tarifs</a>
-
-
-<a href="" class="lg:inline-flex bg-black gap-10 lg:w-auto py-2 font-semibold text-base h-10 w-40 pr-8 pl-6 text-white rounded-full mr-16">
-
-Nous contacter
-</a>
-
-
+								mobi
+							</span>
+						</div>
+					</a>
 
 
 				</div>
+
+				<div class="hidden items-center space-x-10  font-semibold text-base md:flex text-color">
+
+					<a href="" class="tracking-widest hover:text-indigo-700">
+						Présentation
+					</a>
+					<a href="" class="tracking-widest hover:text-indigo-700">
+						Fonctionnalités
+					</a>
+					<a href="" class="tracking-widest hover:text-indigo-700">
+						Tarifs
+					</a>
+					<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
+						Nous contacter
+						</a>
+				</div>
+				<button class="z-30 block md:hidden focus:outline-none hamburger" id="menu-btn">
+
+					<span class="hamburger-top"></span>
+					<span class="hamburger-middle"></span>
+					<span class="hamburger-bottom"></span>
+
+
+				</button>
 			</div>
+			<div id="menu" class="fixed hidden inset-0 mt-5 z-20  flex-col items-center self-end w-full h-full min-h-screen px-6 py-1 pt-24 pb-4 tracking-widest  text-white opacity-90 bg-gray-500">
+
+				<div class="w-full py-3 text-center">
+					<a href="" class="block hover:text-indigo-700" id="Présentation">Présentation</a>
+
+				</div>
+
+				<div class="w-full py-3 text-center">
+					<a href="" class="block hover:text-indigo-700" id="Fonctionnalités">Fonctionnalités</a>
+
+				</div>
+				<div class="w-full py-3 text-center">
+					<a href="" class="block hover:text-indigo-700" id="Tarifs">Tarifs</a>
 
 
+				</div>
+				<div class="w-full py-3 text-center">
+					<a href="" class="block" id="Nous contacter">Nous contacter</a>
+				</div>
+
+
+			</div>
 		</nav>
 
-
 		{% block body %}{% endblock %}
+</div>
+
 	</body>
+{% block javascripts %}
+	{{ encore_entry_script_tags('method') }}
+
+{% endblock %}
+
 </html>
