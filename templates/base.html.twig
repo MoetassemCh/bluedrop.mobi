@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 	<head>
-<meta charset="UTF-8" name="viewport" content="width=device-width">
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<title>
 			{% block title %}Welcome!
@@ -20,87 +22,84 @@
 		{% endblock %}
 
 
-
 	</head>
 
-	<body class=" overflow-x-hidden">
-<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
+	<body class="">
+		<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
+			<nav class="container relative mx-auto p-6">
+				<div class="flex items-center justify-between space-x-20 my-6">
+					<div class="z-30">
+						<a href="{{path('app_home')}}" class="gap-3 items-center  flex flex-row ">
+							<img src="{{asset('build/images/logo.0bc07af2.png')}}" alt="" class="w-10 h-10">
+							<div>
+								<span class="text-2xl text-color font-semibold">
+									bluedrop.
+								</span>
+								<span class="text-2xl font-normal">
 
-
-		<nav class="container relative mx-auto p-6">
-			<div class="flex items-center justify-between space-x-20 my-6">
-				<div class="z-30">
-					<a href="{{path('app_home')}}" class="gap-3 items-center  flex flex-row ">
-						<img src="{{asset('build/images/logo.0bc07af2.png')}}" alt="" class="w-10 h-10">
-						<div>
-							<span class="text-2xl text-color font-semibold">
-								bluedrop.
-							</span>
-							<span class="text-2xl font-normal">
-
-								mobi
-							</span>
-						</div>
-					</a>
-
-
-				</div>
-
-				<div class="hidden items-center space-x-10  font-semibold text-base md:flex text-color">
-
-					<a href="" class="tracking-widest hover:text-indigo-700">
-						Présentation
-					</a>
-					<a href="" class="tracking-widest hover:text-indigo-700">
-						Fonctionnalités
-					</a>
-					<a href="" class="tracking-widest hover:text-indigo-700">
-						Tarifs
-					</a>
-					<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
-						Nous contacter
+									mobi
+								</span>
+							</div>
 						</a>
+
+
+					</div>
+
+					<div class="hidden items-center space-x-10  font-semibold text-base md:flex text-color">
+
+						<a href="" class="tracking-widest hover:text-indigo-700">
+							Présentation
+						</a>
+						<a href="" class="tracking-widest hover:text-indigo-700">
+							Fonctionnalités
+						</a>
+						<a href="" class="tracking-widest hover:text-indigo-700">
+							Tarifs
+						</a>
+						<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
+							Nous contacter
+						</a>
+					</div>
+					<button class="z-30 block md:hidden focus:outline-none hamburger" id="menu-btn">
+
+						<span class="hamburger-top"></span>
+						<span class="hamburger-middle"></span>
+						<span class="hamburger-bottom"></span>
+
+
+					</button>
 				</div>
-				<button class="z-30 block md:hidden focus:outline-none hamburger" id="menu-btn">
+				<div id="menu" class="fixed hidden inset-0 mt-5 z-20  flex-col items-center self-end w-full h-full min-h-screen px-6 py-1 pt-24 pb-4 tracking-widest  text-white opacity-90 bg-gray-500">
 
-					<span class="hamburger-top"></span>
-					<span class="hamburger-middle"></span>
-					<span class="hamburger-bottom"></span>
+					<div class="w-full py-3 text-center">
+						<a href="" class="block hover:text-indigo-700" id="Présentation">Présentation</a>
+
+					</div>
+
+					<div class="w-full py-3 text-center">
+						<a href="" class="block hover:text-indigo-700" id="Fonctionnalités">Fonctionnalités</a>
+
+					</div>
+					<div class="w-full py-3 text-center">
+						<a href="" class="block hover:text-indigo-700" id="Tarifs">Tarifs</a>
 
 
-				</button>
-			</div>
-			<div id="menu" class="fixed hidden inset-0 mt-5 z-20  flex-col items-center self-end w-full h-full min-h-screen px-6 py-1 pt-24 pb-4 tracking-widest  text-white opacity-90 bg-gray-500">
-
-				<div class="w-full py-3 text-center">
-					<a href="" class="block hover:text-indigo-700" id="Présentation">Présentation</a>
-
-				</div>
-
-				<div class="w-full py-3 text-center">
-					<a href="" class="block hover:text-indigo-700" id="Fonctionnalités">Fonctionnalités</a>
-
-				</div>
-				<div class="w-full py-3 text-center">
-					<a href="" class="block hover:text-indigo-700" id="Tarifs">Tarifs</a>
+					</div>
+					<div class="w-full py-3 text-center">
+						<a href="" class="block" id="Nous contacter">Nous contacter</a>
+					</div>
 
 
 				</div>
-				<div class="w-full py-3 text-center">
-					<a href="" class="block" id="Nous contacter">Nous contacter</a>
-				</div>
+			</nav>
 
-
-			</div>
-		</nav>
-
-		{% block body %}{% endblock %}
-</div>
+			{% block body %}{% endblock %}
+		</div>
 
 	</body>
-{% block javascripts %}
-	{{ encore_entry_script_tags('method') }}
+	{% block javascripts %}
+		{{ encore_entry_script_tags('method') }}
 
-{% endblock %}
+	{% endblock %}
 
 </html>
