@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html class="scroll-smooth">
 	<head>
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -16,6 +16,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
@@ -26,6 +28,10 @@
 
 	<body class="overflow-x-hidden">
 		<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
+<a href="" class="animate-bounce absolute lg:right-40 lg:top-28 arrow md:top-32 md:right-24 ">
+	<img src="{{asset('build/images/Frame 1860.ef0efac2.png')}}" alt="">
+</a>
+
 			<nav class="container relative mx-auto p-6">
 				<div class="flex items-center justify-between space-x-20 my-6">
 					<div class="z-30">
@@ -45,9 +51,10 @@
 
 					</div>
 
-					<div class="hidden items-center space-x-10  font-semibold text-base md:flex text-color">
+<div class="hidden items-center space-x-10 text-[#2B292D]  font-semibold text-base md:flex text-color">
 
-						<a href="" class="tracking-widest hover:text-indigo-700">
+
+						<a href="/presentation" class="tracking-widest hover:text-indigo-700">
 							Présentation
 						</a>
 						<a href="" class="tracking-widest hover:text-indigo-700">
@@ -56,6 +63,7 @@
 						<a href="" class="tracking-widest hover:text-indigo-700">
 							Tarifs
 						</a>
+
 						<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
 							Nous contacter
 						</a>
@@ -96,10 +104,12 @@
 			{% block body %}{% endblock %}
 		</div>
 
-	</body>
-	{% block javascripts %}
-		{{ encore_entry_script_tags('method') }}
 
-	{% endblock %}
+
+	</body>
+	
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}
 
 </html>

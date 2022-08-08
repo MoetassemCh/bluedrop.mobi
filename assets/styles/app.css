@@ -20,7 +20,7 @@ top: 24px;
 .accueil-2{
 background-color: #f8f8f8;
 height: 570px;
-top: 24px;
+
 }
 
 .nav-bg{
@@ -85,4 +85,8 @@ background-color: #2B292D;
 }
 
 
-
+@media (max-width: 800px) { 
+.arrow{
+  display: none;
+}
+  }
