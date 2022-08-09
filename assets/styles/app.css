@@ -85,7 +85,7 @@ background-color: #2B292D;
 }
 
 
-@media (max-width: 800px) { 
+@media (max-width: 1019px) { 
 .arrow{
   display: none;
 }
