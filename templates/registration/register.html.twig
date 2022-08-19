@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+	<div class="grid grid-rows-1 place-content-center mx-auto lg:pt-20 md:pt-12 sm:pt-12">
+		<h1 class="text-[#2B292D]  font-semibold lg:text-6xl text-center md:text-3xl sm:text-2xl">
+
+			Registration Form
+
+		</h1>
+
+	</div>
+
+	{{ form_start(registrationForm) }}
+
+
+	<div class="place-content-center mt-6 bg-[#f8f8f8]  lg:mx-auto md:mx-auto sm:mx-auto lg:w-[768px] lg:h-full md:w-full md:h-full sm:w-full sm:h-full rounded-3xl">
+
+		<div class="items-center mx-10 pt-8 grid gap-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+
+<div href="">
+	<i class="fas fa-user"></i>
+{{ form_row(registrationForm.fullname) }}
+
+</div>
+
+<div href="">
+	<i class="fas fa-user"></i>
+{{ form_row(registrationForm.username) }}
+
+</div>
+
+<div href="">
+	<i class="fas fa-envelope"></i>
+{{ form_row(registrationForm.email) }}
+
+</div>
+
+
+			
+
+
+		</div>
+
+		<div class="items-center mx-10 pt-8 grid gap-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+<div href="">
+	<i class="fas fa-lock"></i>
+{{ form_row(registrationForm.plainPassword.first, {'attr': {'placeholder': 'Password'}}) }}
+
+</div>
+<div href="">
+	<i class="fas fa-lock"></i>
+{{ form_row(registrationForm.plainPassword.second,{'attr': {'placeholder': 'Repeat Password'}}) }}
+
+
+</div>
+
+
+		
+
+		</div>
+
+
+		<div class="items-center mx-10 pt-8 grid gap-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+
+<div href="">
+	<i class="fas fa-calendar"></i>
+{{ form_row(registrationForm.DOB) }}
+
+
+</div>
+
+            
+<div href="">
+<i class="fas fa-location"></i>
+
+			{{ form_row(registrationForm.region) }}
+
+</div>
+
+
+<div href="">
+	<i class="fas fa-phone"></i>
+{{ form_row(registrationForm.phonenumber) }}
+
+</div>
+
+
+
+		</div>
+
+<div class="grid grid-rows-1">
+<button type="submit" class="py-3 text-white  my-4 bg-[#2B292D] block hover:bg-white hover:text-indigo-700
+		w-[50x] h-[50px] rounded-3xl lg:text-2xl">Register</button>
+
+</div>
+
+
+	</div>
+{{ form_end(registrationForm) }}
+
+
+{# section #}
+
+ <footer
+	class=" py-8 button-color my-7 rounded-br-3xl rounded-bl-3xl">
+
+	<!-- Footer Flex Container -->
+	<div class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
+		<div class="flex flex-col items-center justify-between space-y-8 text-lg font-semibold md:flex-row md:space-y-0 md:space-x-14 text-[#2b292d]">
+			<img src="{{asset('build/images/Favicon.78e20fef.png')}}" alt="" class="mb-1"/>
+			<span class=" text-white font-semibold">bluedrop.mobi</span>
+
+		</div>
+
+		<div class="flex text-zinc-500">
+			<span>&copy
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+				Copyright -</span>
+
+
+			<a>Tous droits réservés -
+				<span class="underline">Mentions légales</span>
+			</a>
+
+
+		</div>
+	</div>
+</footer> 
+{# end.section #}
+
+
+{% endblock %}

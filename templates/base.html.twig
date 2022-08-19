@@ -28,7 +28,7 @@
 
 	<body class="overflow-x-hidden">
 		<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
-<a href="" class="animate-bounce absolute lg:right-40 lg:top-28 arrow md:top-32 md:right-24 ">
+<a href="" class="animate-bounce absolute lg:right-[270px] lg:top-28 arrow md:top-32 md:right-24 ">
 	<img src="{{asset('build/images/Frame 1860.ef0efac2.png')}}" alt="">
 </a>
 
@@ -51,7 +51,7 @@
 
 					</div>
 
-<div class="hidden items-center space-x-10 text-[#2B292D]  font-semibold text-base md:flex text-color">
+<div class="hidden items-center lg:space-x-6 md:space-x-2 text-[#2B292D]  font-semibold text-base md:flex text-color">
 
 
 						<a href="/presentation" class="tracking-widest hover:text-indigo-700">
@@ -64,9 +64,46 @@
 							Tarifs
 						</a>
 
-						<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
-							Nous contacter
+
+
+<a href="/login" class="px-6 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+
+
+							 Nous contacter
 						</a>
+
+ 
+{# <a href="/{{app.user ? 'logout' : 'login'}}" class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+
+{{ app.user ? 'Logout' : 'Login' }} #}
+
+
+{% if app.user %}
+
+<select onchange="window.location.href=this.value;"  class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+<option selected>
+{{app.user.Fullname}}
+</option>
+<option value="/logout">
+Logout
+</option>
+<option>
+<a href="">
+ Profile<i class="fas fa-user w-6 h-6"></i>
+</a>
+</option>
+</select>
+
+{% else %}
+<a href="/login" class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+	Login
+</a>
+
+{% endif %}
+
+
+
+
 					</div>
 					<button class="z-30 block md:hidden focus:outline-none hamburger" id="menu-btn">
 
@@ -94,8 +131,22 @@
 
 					</div>
 					<div class="w-full py-3 text-center">
-						<a href="" class="block" id="Nous contacter">Nous contacter</a>
+               <a href="" class="block hover:text-indigo-700" id="Nous contacter">Nous contacter</a>
+
 					</div>
+
+<div class="w-full py-3 text-center">
+{% if app.user %}
+<a href="/logout" class="block hover:text-indigo-700">Logout</a>
+<div class="w-full py-3 text-center">
+<a href="/" class="block hover:text-indigo-700">Profile</a>
+</div>
+{% else %}
+<a href="/login" class="block hover:text-indigo-700">Login</a>
+
+{% endif %}
+
+</div>
 
 
 				</div>
