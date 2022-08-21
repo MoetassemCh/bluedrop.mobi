@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ContactController extends AbstractController
 {
@@ -24,6 +26,13 @@ $formBuilder = $this->createFormBuilder()
 'attr'=>array('rows'=>'5')
 
 ])
+->add('email',EmailType::class,[
+            'attr' => [
+                'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
+                'placeholder' => 'email',
+
+            ],
+])
 ->add('Submit',SubmitType::class)
 ->getForm();
 $formBuilder->handleRequest($request);
@@ -33,7 +42,7 @@ if ($formBuilder->isSubmitted() && $formBuilder->isValid()) {
     $text=($input['field']);
          $developer='admin';
    $email=(new TemplatedEmail())
-        ->from('user@gmail.com')
+        ->from($formBuilder['email'])
         ->to('bluedrop@gmail.com')
         ->subject('Message')
         // ->text('exfta')

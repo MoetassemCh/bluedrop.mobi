@@ -1,8 +1,427 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
 
 {% block body %}
+	<section id="hero" class="bg-[#f8f8f8] w-full lg:h-[462px]">
+		<div
+			class="container flex flex-col-reverse lg:place-items-center sm:place-items-center md:flex-row mx-auto lg:flex-row ">
+			{# ...............div for the boy,girl image and the title in center ......................#}
 
-<h1>by</h1>
+			<div class="grid grid-rows-1 mx-auto sm:translate-y-10">
+<img src="{{asset('build/images/presentation/Groupboy.60ab66a6.png')}}" alt="" class=" lg:w-[396.47px] lg:h-[456.55px] z-8 lg:mt-6 lg:-translate-x-2 xl:top-0 mt-2 md:w-[240px] md:h-[200px] md:-translate-y-14 md:translate-x-10 sm:w-[200px] sm:h-[180px] sm:-translate-y-10 overflow-x-visible">
 
-{% endblock %}
+
+			</div>
+			<div class="grid grid-rows-1 lg:-translate-y-24 md:-translate-y-4">
+				<h1 class="text-[#2B292D text-center lg:text-[40px] lg:mt-10 md:text-[28px] sm:text-[25px] font-semibold ">
+					Un produit dédié aux
+					<br>
+					questions de mobilité
+				</h1>
+				<div class="grid grid-rows-1 place-content-center lg:mt-5 ">
+					<p class="font-normal text-center md:text-center text-[#2B292D] 16px ">
+						Un produit pensé pour vos utilisateurs pour répondre<br>
+					</p>
+					<p class="font-normal text-[#2B292D] text-center 16px">
+						à tous leurs besoins de mobilité.
+					</p>
+				</p>
+			</div>
+			<div class="grid grid-rows-1 place-content-center lg:mt-5 ">
+				<a href="" class="rounded-full bg-[#2B292D] text-center py-3 px-6 font-semi-bold text-base text-white shadow-md hover:bg-white hover:text-indigo-800 mt-3 lg:w-[338px] lg:h-[48px] md:w-full sm:full																																																																																																																																																																																																																																																																																																																																																																																		">
+					Découvrir le produit
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row-start-1 col-end-3 sm:mx-auto lg:w-[255.01px] lg:h-[421.65px] sm:-translate-y-4">
+<img src="{{asset('build/images/presentation/girl.cac20659.png')}}" alt="" class="lg:w-[255.01px] lg:h-[421.65px] z-8 lg:mt-20 lg:mr-20 xl:top-0 overflow-x-visible md:h-[200px] sm:w-[200px] sm:h-[180px]">
+
+
+		</div>
+	</div>
+</section>
+
+{#............................... div for the video in a frame tag ....................................#}
+
+<div class="grid grid-col-1 place-items-center md:-translate-y-10 sm:-translate-y-6  ">
+	<div class="row-start-2 row-span-2 ">
+		<iframe class=" lg:w-[850px] lg:h-[525px] mx-auto lg:-translate-y-24 aspect-video rounded-3xl md:w-[600px] md:h-[92%] sm:w-[400px] sm:h-[92%] sm:mt-10" src="https://www.youtube.com/embed/5Gsam6jyRI0" allowfullscreen></iframe>
+	</div>
+</div>
+
+{#.................... div container for the student image and the left content ........................ #}
+<div class="bg-[#f8f8f8] w-full lg:h-[450px] lg:place-items-center sm:place-items-center mb-6 md:mt-10 ">
+
+	<div
+		class="container flex flex-col lg:place-items-center sm:mt-10 md:place-items-center mx-auto px-6  md:flex-row md:space-x-16">
+		<!-- Image -->
+		<div class="md:w-1/2 lg:w-[400px] lg:place-items-center md:place-items-center md:justify-center items-center  sm:justify-center sm:text-center sm:translate-y-6">
+			<h1 class=" lg:text-4xl md:text-[28px] sm:text-[25px] place-items-center text-[#2B292D] font-semibold">
+				Des parcours pensés pour vos utilisateurs.
+			</h1>
+			<p class="place-items-center lg:text-[16px] md:text-lg md:justify-center sm:text-sm font-normal">
+				Chaque parcours à été pensé avec et pour vos utilisateurs
+				<br>
+				afin de leur proposer la meilleure expérience possible.
+			</p>
+		</div>
+		<div class="flex flex-col place-items-center sm:mt-10 ">
+			<div class="flex flex-col lg:mt-10">
+<img src="{{asset('build/images/presentation/student.1826b390.png')}}" alt="" class="lg:w-[468px] lg:h-[360px] md:place-items-center sm:place-items-center items-center "/>
+
+
+				<div class="flex flex-col place-content-center lg:ml-80 lg:-translate-y-48 md:-translate-10  lg:visible  md:invisible invisible sm:invisible sm:w-[2px] sm:h-[2px] ">
+<img src="{{asset('build/images/presentation/arowstudent.a9f1681c.png')}}" class=" animate-bounce arrow lg:w-[64px] lg:h-[88px] lg:ml-40 lg:-translate-y-25 md:ml-40 md:-translate-y-80 md:w-[28px] md:h-[40px]" alt=" ">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{# ................................. Interface personnalisée avec icons (6)................................. #}
+<div class=" lg:mt-20 md:mt-20 grid grid-rows-1 sm:-translate-y-2">
+
+	<div class="items-center place-content-center">
+		<h1 class="text-[#2B292D] text-center lg:text-[40px] md:text-[28px] sm:text-[25px] font-semibold ">
+			Une interface personnalisée
+		</h1>
+	</div>
+	<div class="grid grid-rows-1 mt-2">
+		<p class="font-normal text-[#2B292D] text-center 16px align-center">
+			Des interfaces personnalisées qui s’adaptent à votre charte graphique
+			<br>
+			et à votre identité visuelle.
+		</p>
+	</div>
+	<div class="grid grid-rows-1 place-content-center mt-4">
+		<a href="" class="rounded-full bg-[#2B292D] text-center py-3 px-6 font-semi-bold text-base text-white shadow-md hover:bg-white hover:text-indigo-800 mt-3 lg:w-[338px] lg:h-[48px] md:w-full sm:full">
+			Découvrir toutes les  fonctionalités
+			<i class="fa-solid fa-arrow-right"></i>
+		</a>
+	</div>
+
+</div>
+
+{# ..........................6 icons 2 by 2 order........................................................... #}
+{# .........................................1st icon Personnalisation du logo ...................................#}
+
+<div class="row-span-1 mt-4">
+	<div class="grid lg:grid-cols-2 lg:mx-28 md:mx-auto sm:mx-auto gap-y-4 md:grid-cols-1 sm:grid-cols-1 lg:divide-x-0 md:divide-y-0 divide-black text-center">
+		<div class="items-center">
+<a href=""><img src="{{asset('build/images/presentation/personnalisation.93dfbf4b.png')}}" class=" mx-auto" alt="">
+
+			</a>
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Personnalisation du logo</h1>
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base "></p>
+			Nibh morbi netus arcu felis. At non vitae eget ut
+			<br>
+			congue tortor fringilla mauris.
+		</div>
+
+		{# .........................................2 nd icon Des blocs adaptables .........................................#}
+
+		<div class="items-center ">
+<a href=""><img src="{{asset('build/images/presentation/blocsadapte.88612e56.png')}}" class=" mx-auto" alt=""></a>
+
+
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Des blocs adaptables</h1>
+
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base ">
+				Nibh morbi netus arcu felis. At non vitae eget ut
+				<br>
+				congue tortor fringilla mauris.
+			</p>
+		</div>
+
+		{# .......................3rd icon	Personnalisation des couleurs......................................... #}
+
+		<div class="items-center">
+<a href=""><img src="{{asset('build/images/presentation/descouleurs.ef6f53a6.png')}}" class=" mx-auto" alt=""></a>
+
+
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Personnalisation des couleurs</h1>
+
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base ">
+				Nibh morbi netus arcu felis. At non vitae eget ut
+				<br>
+				congue tortor fringilla mauris.
+			</p>
+		</div>
+
+		{#......................................... 4rd icon Une structure modulabe.........................................#}
+
+		<div class="items-center">
+<a href=""><img src="{{asset('build/images/presentation/structuremodall.4942e757.png')}}" class=" mx-auto" alt=""></a>
+
+
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Une structure modulabe</h1>
+
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base ">
+				Nibh morbi netus arcu felis. At non vitae eget ut
+				<br>
+				congue tortor fringilla mauris.
+			</p>
+		</div>
+		{# .........................................the 5 icon Intégration de votre charte ...........#}
+		<div class="items-center">
+<a href=""><img src="{{asset('build/images/presentation/integrationchart.1bd8a2c2.png')}}" class=" mx-auto" alt=""></a>
+
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Intégration de votre charte</h1>
+
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base ">
+				Nibh morbi netus arcu felis. At non vitae eget ut
+				<br>
+				congue tortor fringilla mauris.
+			</p>
+		</div>
+
+		{# .........................................the 6 icon Menus éditables...................... #}
+
+		<div class="items-center">
+<a href="" class=" lg:w-[80px]"><img src="{{asset('build/images/presentation/menueditable.dac12c85.png')}}" class="mx-auto" alt=""></a>
+
+			<h1 class="row-span-1 text-[#2B292D] font-semibold text-lg">Menus éditables</h1>
+			<p class="row-span-1 text-[#2B292D] font-normal mt-3 text-base ">
+				Nibh morbi netus arcu felis. At non vitae eget ut
+				<br>
+				congue tortor fringilla mauris.
+			</p>
+		</div>
+	</div>
+</div>
+
+{#...................... divs for telefone image and video .....................#}
+
+<div class="bg-[#f8f8f8] w-full lg:h-[765px] md:h-[900px] sm:h-[860px] lg:place-items-center sm:place-items-center mb-6 lg:mt-40 md:mt-20 ">
+	<div class="flex flex-row items-center justify-center text-center">
+		<div class="lg:h-[599.99px] lg:place-items-center md:place-items-center lg:-translate-y-[250px]  md:-translate-y-40 sm:-translate-y-20 sm:place-items-center">
+			<a href="#" class="">
+				<img src="{{asset('build/images/presentation/leftmoustach.e6ff4be7.png')}}" class="lg:w-[40px] lg:h-[104px] lg:translate-y-[280px] lg:translate-x-2
+								md:w-[40px] md:h-[104px] md:translate-y-[280px] md:translate-x-2
+								sm:w-[30px] sm:h-[80px] sm:translate-y-[220px] sm:translate-x-2 " alt="">
+			</a>
+			<a href="#" class="">
+				<img src="{{asset('build/images/presentation/leftimagetelefone.50f525e8.png')}}" class="lg:w-[71.98px] lg:h-[73.15px] lg:-translate-x-4 lg:translate-y-[480px]
+								md:w-[71.98px] md:h-[73.15px] md:-translate-x-4 md:translate-y-[480px]
+								sm:w-[71.98px] sm:h-[73.15px] sm:-translate-x-4 sm:translate-y-[480px]" alt="">
+			</a>
+			<img src="{{asset('build/images/presentation/8aymegraytelefone.25dd49c8.png')}}" class="lg:w[497.7px] lg-h[599.99px] lg:place-items-center md:place-items-center sm:place-items-center
+							md:w[497.7px] md-h[599.99px]
+							sm:w[397.7px] sm-h[499.99px]
+							" alt="">
+			<img src="{{asset('build/images/presentation/telefone.a136c409.png')}}" class="lg:w[497.7px] lg-h[599.99px] lg:place-items-center md:place-items-center sm:place-items-center lg:-translate-y-[610px] lg:translate-x-16
+							md:w[497.7px] md-h[599.99px] md:-translate-y-[610px] md:translate-x-16
+							sm:w[397.7px] sm-h[499.99px] sm:-translate-y-[610px] sm:translate-x-16" alt="">
+				<iframe class=" lg:w-[250px] lg:h-[519px] lg:-translate-y-[1154px] lg:-translate-x-[34px] border border-slate
+								md:-translate-y-[1154px] md:-translate-x-[34px] mx-auto aspect-video md:w-[247px] md:h-[520px]
+								sm:w-[252px] sm:h-[520px] sm:-translate-y-[1154px] sm:-translate-x-[34px] rounded-2xl" src="https://www.youtube.com/embed/5Gsam6jyRI0" allowfullscreen></iframe>
+			</img>
+			<a href="#">
+				<img src="{{asset('build/images/presentation/rightmoustache.de531456.png')}}" class="lg:w-[40px] lg:h-[104px] lg:-translate-y-[1320px] lg:translate-x-[440px]
+								md:w-[40px] md:h-[104px] md:-translate-y-[1320px] md:translate-x-[440px]
+								sm:w-[40px] sm:h-[104px] sm:-translate-y-[1320px] sm:translate-x-[440px]" alt="">
+				<a href="#">
+					<img src="{{asset('build/images/presentation/rightimagetelefone.20426774.png')}}" class="lg:w-[71.98px] lg:h-[73.15px] lg:-translate-y-[1700px] lg:translate-x-[420px]
+										md:w-[71.98px] md:h-[73.15px] md:-translate-y-[1700px] md:translate-x-[420px]
+										sm:w-[71.98px] sm:h-[73.15px] sm:-translate-y-[1700px] sm:translate-x-[420px] " alt="">
+				</a>
+			</a>
+		</div>
+	</div>
+
+	{# ................Une application mobile pour le web........... #}
+
+	<div class="lg:-translate-y-[10px] md:-translate-y-[1410px] sm:-translate-y-[1290px] ">
+		<h1 class="text-[#2B292D] text-center lg:text-[40px] md:text-[28px] sm:text-[25px] font-bold ">
+			Une application mobile pour le web
+		</h1>
+		<h1 class="my-7 text-[#2B292D] text-center lg:text-[16px] md:text-[22px] sm:text-[18px] ">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit neque lacus pellentesque quam congue dolor mauris.
+		</h1>
+	</div>
+</div>
+
+{#............ div for Toutes les fonctionnalités clés en main ..................#}
+
+
+<div class=" mt-16 grid grid-rows-1 items-center">
+	<h1 class="text-[#2B292D] text-center lg:text-[40px] md:text-[28px] sm:text-[25px] font-bold ">
+		Toutes les fonctionnalités
+		<br>
+		clés en main
+	</h1>
+	<h1 class="my-7 text-[#2B292D] text-center lg:text-[16px] md:text-[22px] sm:text-[18px] ">
+		Des interfaces personnalisées qui s’adaptent à votre charte graphique
+		<br>
+		et à votre identité visuelle.
+	</h1>
+</div>
+
+{# .........................divs for caroysel ...................................#}
+
+<div class="grid grid-cols-3 gap-4 justify-items-center">
+	<div
+		class="flex-row bg-[#f8f8f8] lg:w-[768px] lg:h-[436px] md:w-[568px] md:h-[436px] place-items-center lg:-translate-x-[410px] md:-translate-x-[510px]">{# <img src="https://mdbootstrap.com/img/new/standard/city/047.jpg" class="max-w-full h-auto rounded-lg lg:-translate-x-[300px] " alt=""> #}
+	</div>
+
+	<div class="flex-row bg-[#f8f8f8] lg:w-[768px] lg:h-[436px] md:w-[568px] md:h-[436px] place-items-center">
+		<button><img src="{{asset('build/images/presentation/previous.e46087c6.png')}}" class="lg:translate-y-[180px] lg:-translate-x-[30px] md:translate-y-[180px] md:-translate-x-[30px] sm:translate-y-[180px] sm:-translate-x-[30px]" alt="">
+		</button>
+		<img src="{{asset('build/images/presentation/blackgirl.9b377215.png')}}" class="max-w-[362px] h-[308px] lg:translate-x-[200px] place-items-center rounded-lg" alt="">
+		<button><img src="{{asset('build/images/presentation/next.3f57679c.png')}}" class="lg:-translate-y-[180px] lg:translate-x-[738px] md:-translate-y-[180px] md:translate-x-[538px] sm:-translate-y-[180px] sm:translate-x-[438px]" alt="">
+		</button>
+	</div>
+	<div
+		class="flex-row bg-[#f8f8f8] lg:w-[768px] lg:h-[436px] md:w-[568px] md:h-[436px] place-items-center lg:translate-x-[410px] md:translate-x-[510px]">{# <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="max-w-full h-auto rounded-full" alt="">  #}
+	</div>
+
+</div>
+
+{# 
+
+<div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+  <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner relative w-full overflow-hidden">
+    <div class="carousel-item active relative float-left w-full">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+        class="block w-full"
+        alt="..."
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+        class="block w-full"
+        alt="..."
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+        class="block w-full"
+        alt="..."
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> #}
+
+
+<div class=" mt-16 grid grid-rows-1 mt-10">
+	<h1 class="text-[#2B292D] text-center lg:text-[40px] md:text-[28px] sm:text-[25px] sm:place-content-center font-bold ">
+		Un partenariat de choix
+		<br>
+		pour l’exploitation de vos donnée
+	</h1>
+</div>
+<div class="flex flex-col rounded-lg bg-[#F8F8F8] lg:w-[968px] place-content-center sm:place-content-center mt-20 mx-auto sm:mx-auto md:w-1/2">
+	<div class="flex flex-col md:flex-col sm:justify-center items-center sm:mx-auto">
+		<a href="https://www.cityway.fr/" class="w-[172.31px] h-[72px] mb-10 sm:place-items-center">
+			<img src="{{asset('build/images/presentation/cityway.b02c0ce9.png')}}" class="w-[172.31px] h-[72px] mb-10" alt="">
+		</a>
+	</div>
+	<div class="flex flex-col md:flex-col ">
+		<div class="flex flex-col mt-2 rounded-lg lg:place-items-center md:place-items-center sm:place-items-center mx-auto ">
+			<p class="font-normal text-[#2B292D] lg:place-items-center md:place-items-center sm:place-items-center ">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem sit felis vulputate facilisis velit sit tortor morbi. Maecenas et vel ac donec ut sit scelerisque ut sit.
+			</p>
+		</div>
+		<div class="flex flex-col md:flex-col">
+			<div class="flex flex-col mt-2 rounded-lg items-center sm:mx-auto mx-auto md:w-1/2">
+				<a href="https://www.cityway.fr/" class="underline md:underline-offset-4 mb-12 font-bold text-[#2B292D]">
+					www.cityway.fr
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{#......... link for contact and contact image for presentation/ de produit page last......... #}
+
+<div class="my-20 mx-auto bg-[#f8f8f8] place-content-center lg:w-full lg:h-[900px] md:w-full sm:w-full																																																																																																																																																																																																																																																																															">
+	<div class="pt-20">
+		<h1 class="text-[#2B292D] font-bold text-center lg:text-[40px] md:text-[22px]  sm:text-[18px] ">
+
+			Vous avez des questions ?
+			<br>
+			Un projet ? Contactez-nous !
+
+		</h1>
+
+		<p class="space-y-2 text-[#2B292D] font-normal text-base text-center">
+			Nos différentes offes inclues toutes les fonctionnalités nécessaires
+			<br>
+			aux besoins de vos utilisateurs.
+		</p>
+
+		<div class="grid grid-rows-1 mt-9 place-content-center">
+			<a href="#" class="py-3 px-10 lg:w-[293px] lg:h-[56px] text-center font-semi-bold md:w-full sm:full   lg:text-xl md:text-base sm:text-sm  font-bold text-white bg-[#2B292D] rounded-full shadow-md  hover:bg-white hover:text-indigo-700">
+
+				Débuter un projet
+				<i class="fa-solid fa-arrow-right"></i>
+			</a>
+		</div>
+
+		<div class="grid grid-rows-1 mt-8 place-content-center">
+
+<img src="{{asset('build/images/HomeBottomImage.4665a9a5.png')}}" alt="">
+
+
+		</div>
+
+	</div>
+</div>{% endblock %}
