@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+		<link href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+
+	</head>
+
+<body>
+
+<div class=" bg-[#F8F8F8] h-[88px] mx-auto w-[900px] text-black mt-20 rounded-t-3xl">
+
+
+		<nav class="md:flex text-center md:items-center md:justify-center">
+<div class="flex cursor-pointer pt-4 ">
+
+				<span>
+					<a href="https://www.bluedrop.fr/">
+<span class="text-lg font-bold"><img class="h-6 inline" src="{{asset('build/images/logo.0bc07af2.png')}}"><span class="ml-3 text-[#2B292D]">bluedrop</span>
+
+
+</span>
+
+<span class="text-lg text-[#2B292D]">.mobi</span>
+
+
+					</a>
+				</span>
+			</div>
+		</nav>
+	</div>
+
+
+	<div class=" md:grid md:grid-cols-3 md:divide-x-0 bg-white justify-center  items-center text-center mb-2 space-y-2">
+		<div></div>
+		<div>
+<span class="text-3xl font-bold text-[#2B292D]">La mobilité en toute simplicité</span><br>
+
+			<span class="text-sm text-[#2B292D]">Un produit adapte et pense pour vos utilisateurs afin de faciliter leurs deplacements.</span>
+			<img class="h-50 inline" src="{{asset('build/images/Contactimage.afa0db5f.png')}}">
+			<button class="inline-block bg-[#2B292D] text-white font-bold rounded-3xl py-3 px-8">
+<a href="" class="text-white hover:bg-white hover:text-indigo-700">Nous contacter<i class="fa-solid fa-arrow-right ml-4"></i>
+
+
+
+				</a>
+			</button>
+		</div>
+		<div></div>
+	</div>
+
+<div class="md:flex md:items-center mb-10 w-[900px] mx-auto md:justify-center space-x-4 bg-[#2B292D] mt-10 rounded-b-3xl p-6 text-white">
+
+<span class="md:text-sm text-[#CAC9CA] text-xs font-thin md:text-right">Copyright2022-Tous droits reserves-<span class="underline underline-offset-8">Mentions legales</span>
+
+
+		</span>
+	</div>
+
+</body>
+
+</html>
+

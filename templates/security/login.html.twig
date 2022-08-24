@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="grid grid-rows-1 place-content-center mx-auto lg:pt-20 md:pt-12 sm:pt-12">
+		<h1 class="text-[#2B292D]  font-semibold lg:text-6xl text-center md:text-3xl sm:text-2xl">
+
+			Login Form
+
+		</h1>
+
+	</div>
+
+<form method="post">
+
+	<div class="place-content-center mt-6 bg-[#f8f8f8]  lg:mx-auto md:mx-auto sm:mx-auto lg:w-[768px] lg:h-full md:w-full md:h-full sm:w-full sm:h-full rounded-3xl">
+
+		<div class="items-center mx-10 pt-8 grid grid-cols-1 ">
+			
+				{% if error %}
+<div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+<span class="font-medium">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+
+</div>
+
+				{% endif %}
+
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.username }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% endif %}
+
+				<div>
+					<i class="fas fa-envelope"></i>
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="block  border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4" autocomplete="email" placeholder="email" autofocus>
+
+				</div>
+
+				<div>
+					<i class="fas fa-lock"></i>
+					<input type="password" name="password" id="inputPassword" class="block border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4" autocomplete="current-password" placeholder="password">
+
+				</div>
+
+				<div>
+					<input type="hidden" name="_csrf_token"  value="{{ csrf_token('authenticate') }}">
+
+
+				</div>
+
+
+   <div class="grid grid-rows-1">
+   <div class="row-span-1">
+<a href=" {{ path('app_forgot_password_request') }}">
+
+<span class=" font-normal text-base text-[#2B292D] cursor-pointer hover:font-bold">
+	Forgget Password?</span>
+
+
+</a>
+
+   </div>
+   </div>
+
+
+			<div class="grid grid-rows-1 items-center">
+				<button type="submit" class="py-3 text-white  my-4 bg-[#2B292D] block hover:bg-white hover:text-indigo-700 rounded-3xl lg:text-2xl mx-auto lg:w-[300px] md:w-full sm:w-full">Login</button>
+			</div>
+
+<div class="flex items-center justify-center border-t-[1px] border-t-slate-300 w-full relative">
+	<div class="-mt-1 bg-white px-5 absolute">Or</div>
+</div>
+
+<div class="grid grid-rows-1 items-center">
+<a href="/register" class="py-3 text-center text-white  my-4 bg-[#2B292D] block hover:bg-white hover:text-indigo-700 rounded-3xl lg:text-2xl mx-auto lg:w-[300px] md:w-full sm:w-full">Sign Up
+
+	<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+
+	</div>
+</div>
+</form>
+
+<footer
+	class=" py-10 button-color my-7 rounded-br-3xl rounded-bl-3xl">
+
+	<!-- Footer Flex Container -->
+	<div class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
+		<div class="flex flex-col items-center justify-between space-y-8 text-lg font-semibold md:flex-row md:space-y-0 md:space-x-14 text-[#2b292d]">
+			<img src="{{asset('build/images/Favicon.78e20fef.png')}}" alt="" class="mb-1"/>
+			<span class=" text-white font-semibold">bluedrop.mobi</span>
+
+		</div>
+
+		<div class="flex text-zinc-500">
+			<span>&copy
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+				Copyright -</span>
+
+
+			<a>Tous droits réservés -
+				<span class="underline">Mentions légales</span>
+			</a>
+
+
+		</div>
+	</div>
+</footer>
+
+{% endblock %}

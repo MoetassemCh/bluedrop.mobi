@@ -22,3 +22,7 @@ function navButton(){
  menu.classList.toggle('flex')
  menu.classList.toggle("hidden");
 }
+
+
+
+

@@ -92,3 +92,87 @@ background-color: #2B292D;
   }
 
 
+
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+
+ul li{
+    position: relative;
+    padding-bottom: 4px;
+    padding-top: 18px;
+
+
+}
+/* hr{
+height: 2px;
+background-color: #2B292D;
+} */
+
+ul li input[type="checkbox"]{
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+ul li i{
+    position: absolute;
+    transform: translate(-6px,0);
+    margin-top: 16px;
+    right: 0;
+} 
+ul li input[type=checkbox]:checked ~ div {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+ul li input[type="checkbox"]:checked~i::before{
+    transform: translate(2px,0) rotate(45deg);
+}
+ul li input[type="checkbox"]:checked~i::after{
+    transform: translate(-2px,0) rotate(-45deg);
+}
+ul li i::before,ul li i::after{
+    content: "";
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 1px;
+    height: 6px;
+}
+ul li i::before{
+    transform: translate(-2px,0) rotate(45deg);
+}
+ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+
+.transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+  
+}
+.flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+ul li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ul li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+ul li:last-of-type {
+  padding-bottom: 0;
+}
+

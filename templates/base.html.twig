@@ -28,7 +28,7 @@
 
 	<body class="overflow-x-hidden">
 		<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
-<a href="" class="animate-bounce absolute lg:right-40 lg:top-28 arrow md:top-32 md:right-24 ">
+<a href="" class="animate-bounce absolute lg:right-[270px] lg:top-28 arrow md:top-32 md:right-24 ">
 	<img src="{{asset('build/images/Frame 1860.ef0efac2.png')}}" alt="">
 </a>
 
@@ -51,24 +51,67 @@
 
 					</div>
 
-<div class="hidden items-center space-x-10 text-[#2B292D]  font-semibold text-base md:flex text-color">
+<div class="hidden items-center lg:space-x-6 md:space-x-2 text-[#2B292D]  font-semibold text-base md:flex text-color">
 
 
-						<a href="/presentation" class="tracking-widest hover:text-indigo-700">
+						<a href="{{url('app_presentation')}}" class="tracking-widest hover:text-indigo-700">
 							Présentation
 						</a>
-						<a href="" class="tracking-widest hover:text-indigo-700">
+						<a href="/fonctionnalites" class="tracking-widest hover:text-indigo-700">
 							Fonctionnalités
 						</a>
 						<a href="/tarifs" class="tracking-widest hover:text-indigo-700">
 							Tarifs
 						</a>
+						
+{# {% if is_granted('ROLE_ADMIN') %}
+<select onchange="window.location.href=this.value;" class="tracking-widest hover:text-indigo-700">
+	<option selected>
+		Dashboard
+	</option>
+	<option value="/admin/dashboard">
+		page
+	</option>
+</select>
 
-						<a href="" class="px-8 inline-block button-color hover:bg-white hover:text-indigo-700 text-white py-2 rounded-full">
-							Nous contacter
+{% endif %} #}
+
+
+
+<a href="/contact" class="px-6 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+
+
+							 Nous contacter
 						</a>
+
+{% if app.user %}
+
+<select onchange="window.location.href=this.value;"  class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+<option selected>
+{{app.user.Fullname}}
+</option>
+<option value="/logout">
+Logout
+</option>
+<option>
+<a href="">
+ Profile<i class="fas fa-user w-6 h-6"></i>
+</a>
+</option>
+</select>
+
+{% else %}
+<a href="/login" class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+	Login
+</a>
+
+{% endif %}
+
+
+
+
 					</div>
-					<button class="z-30 block md:hidden focus:outline-none hamburger" id="menu-btn">
+					<button class="z-30 block  md:hidden focus:outline-none hamburger" id="menu-btn">
 
 						<span class="hamburger-top"></span>
 						<span class="hamburger-middle"></span>
@@ -85,7 +128,7 @@
 					</div>
 
 					<div class="w-full py-3 text-center">
-						<a href="" class="block hover:text-indigo-700" id="Fonctionnalités">Fonctionnalités</a>
+						<a href="/fonctionnalites" class="block hover:text-indigo-700" id="Fonctionnalités">Fonctionnalités</a>
 
 					</div>
 					<div class="w-full py-3 text-center">
@@ -94,8 +137,25 @@
 
 					</div>
 					<div class="w-full py-3 text-center">
-						<a href="" class="block" id="Nous contacter">Nous contacter</a>
+               <a href="/contact" class="block hover:text-indigo-700" id="Nous contacter">Nous contacter</a>
+
 					</div>
+
+<div class="w-full py-3 text-center">
+{% if app.user %}
+<a href="/logout" class="block hover:text-indigo-700">Logout</a>
+<div class="w-full py-3 text-center">
+<a href="/" class="block hover:text-indigo-700">Profile</a>
+</div>
+{% else %}
+<a href="/login" class="block hover:text-indigo-700">Login</a>
+
+{% endif %}
+{# 
+{% if is_granted('ROLE_ADMIN') %}
+<a href="/admin/dashboard" class="block hover:text-indigo-700">Page</a>	
+{% endif %} #}
+</div>
 
 
 				</div>
