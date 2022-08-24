@@ -54,7 +54,7 @@
 <div class="hidden items-center lg:space-x-6 md:space-x-2 text-[#2B292D]  font-semibold text-base md:flex text-color">
 
 
-						<a href="/presentation" class="tracking-widest hover:text-indigo-700">
+						<a href="{{url('app_presentation')}}" class="tracking-widest hover:text-indigo-700">
 							Présentation
 						</a>
 						<a href="/fonctionnalites" class="tracking-widest hover:text-indigo-700">
@@ -64,7 +64,7 @@
 							Tarifs
 						</a>
 						
-{% if is_granted('ROLE_ADMIN') %}
+{# {% if is_granted('ROLE_ADMIN') %}
 <select onchange="window.location.href=this.value;" class="tracking-widest hover:text-indigo-700">
 	<option selected>
 		Dashboard
@@ -74,11 +74,11 @@
 	</option>
 </select>
 
-{% endif %}
+{% endif %} #}
 
 
 
-<a href="/contacter" class="px-6 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
+<a href="/contact" class="px-6 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
 
 
 							 Nous contacter
@@ -137,7 +137,7 @@ Logout
 
 					</div>
 					<div class="w-full py-3 text-center">
-               <a href="" class="block hover:text-indigo-700" id="Nous contacter">Nous contacter</a>
+               <a href="/contact" class="block hover:text-indigo-700" id="Nous contacter">Nous contacter</a>
 
 					</div>
 
@@ -151,10 +151,10 @@ Logout
 <a href="/login" class="block hover:text-indigo-700">Login</a>
 
 {% endif %}
-
+{# 
 {% if is_granted('ROLE_ADMIN') %}
 <a href="/admin/dashboard" class="block hover:text-indigo-700">Page</a>	
-{% endif %}
+{% endif %} #}
 </div>
 
 

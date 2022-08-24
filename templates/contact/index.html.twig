@@ -3,61 +3,121 @@
 
 {% block body %}
 
+<div class="bg-[#f8f8f8] space-y-4 w-full lg:h-[342px] md:h-full sm:h-ful">
+
+
+	<div class="text-2xl justify-center text-center items-center
+						font-semibold lg:text-6xl  md:text-3xl sm:text-2xl
+			
+						    ">
+		<p>Vous avez de question ?</p>
+
+		<p>Un projet ? Contactez-nous !</p>
+
+	</div>
+
+</div>
+
+<div class="z-0 flex flex-col justify-center items-center lg:-mt-14 md:-mt-5 sm:mt-8 inset-1"><img class="h-50 inline" src="{{asset('build/images/Contactimage.afa0db5f.png')}}">
+</div>
+
+
+<div class="flex flex-col justify-center items-center md:mt-16 mt-2">
+	<div class="flex w-full min-h-screen justify-center items-center">
+		<div class="flex flex-col bg-gray-50 w-full max-w-2xl p-8 rounded-xl text-black">
+			<div>
 {% for message in app.flashes('message') %}
 	<div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
 		<h3>{{message}}</h3>
 	</div>
-{{ form_row(formBuilder.email) }}
-
+	
 
 {% endfor %}
 
-{{form(formBuilder)}}
 
-
-
-	{# <form action="contact-form">
-
-		<div class="antialiased text-gray-900 px-6">
-			<div class="max-w-xl mx-auto py-12 divide-y md:max-w-4xl">
-
-				<div class="py-12">
-					<h2 class="text-2xl font-bold">Simple</h2>
-					<div class="mt-8 max-w-md">
-						<div class="grid grid-cols-1 gap-6">
-							<label class="block">
-								<span class="text-gray-700">Full name</span>
-								<input type="text" class="   mt-1  block    w-full   rounded-md  focus:border-indigo-300" placeholder=""/>
-							</label>
-							<label class="block">
-								<span class="text-gray-700">Email address</span>
-								<input type="email" class=" mt-1 block w-full rounded-md  border-gray-300 shadow-sm  focus:border-indigo-300 focu focus:ring-opacity-50 " placeholder="john@example.com"/>
-							</label>
-	
-							<label class="block">
-								<span class="text-gray-700">What type of event is it?</span>
-								<select class="  blockw-full mt-1   rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-																										                  ">
-									<option>Corporate event</option>
-									<option>Wedding</option>
-									<option>Birthday</option>
-									<option>Other</option>
-								</select>
-							</label>
-							<label class="block">
-								<span class="text-gray-700">Additional details</span>
-								<textarea class=" mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3"></textarea>
-							</label>
-
-						</div>
-					</div>
+				{{form_start(contactform,{'attr':{'class':'flex flex-col space-y-7'}})}}
+				<div>
+					<small>*champs obligatoires</small>
 				</div>
+				<div>
+					{{ form_row(contactform.fullName)}}</div>
+				<div>{{ form_row(contactform.email)}}</div>
+				<div>{{ form_row(contactform.phonenumber)}}</div> 
+				 <div>{{form_row(contactform.selectpack)}}</div> 
+				<div>
+					{{ form_row(contactform.message)}}
+				</div>
+
+				<button type="submit" class="inline-block bg-[#2B292D] text-white font-bold rounded-3xl py-3 hover:bg-white hover:text-indigo-700">Envoyer votre message</button>
+
+				{{ form_end(contactform) }}
 
 			</div>
 		</div>
+	</div>
+
+	<div class="font-bold m-5 text-3xl">
+		<p>Venez nous voir</p>
+	</div>
+
+	<div class="font-bold text-lg  m-5">
+
+		<p>Marseille</p>
+	</div>
+
+	<div class="text-center text-lg flex flex-col space-y-2">
+		<span>18-20 avenue Robert Schuman</span>
+		<span>13002 Marseille</span>
+		<span>04 91 77 13 18</span>
+		<span class="font-bold underline underline-offset">
+			<a href="https://www.bluedrop.fr/content/contact">contact@bluedrop.fr</a>
+		</span>
+	</div>
+</div>
 
 
-	</form> #}
+{# section #}
+<footer
+	class=" py-8 button-color my-7 rounded-br-3xl rounded-bl-3xl">
+
+	<!-- Footer Flex Container -->
+	<div class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
+		<div class="flex flex-col items-center justify-between space-y-8 text-lg font-semibold md:flex-row md:space-y-0 md:space-x-14 text-[#2b292d]">
+			<img src="{{asset('build/images/Favicon.78e20fef.png')}}" alt="" class="mb-1"/>
+			<span class=" text-white font-semibold">bluedrop.mobi</span>
+
+		</div>
+
+		<div class="flex text-zinc-500">
+			<span>&copy
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+				Copyright -</span>
+
+
+			<a>Tous droits réservés -
+				<span class="underline">Mentions légales</span>
+			</a>
+
+
+		</div>
+	</div>
+</footer>
+{# end.section #}
+
 
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
