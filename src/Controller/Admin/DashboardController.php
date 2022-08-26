@@ -2,6 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Order;
+use App\Entity\Project;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -23,7 +26,7 @@ public function __construct(private AdminUrlGenerator $adminUrlGenerator)
     public function index(): Response
     {
 $url=$this->adminUrlGenerator
-->setController(ProductCrudController::class)
+->setController(ProjectCrudController::class)
 ->generateUrl();
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
@@ -50,7 +53,19 @@ $url=$this->adminUrlGenerator
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::section('Dashboard', 'fa fa-home');
+        yield MenuItem::section('Project');
+        yield MenuItem::subMenu("Actions",'fas fa-bars')->setSubItems([
+        MenuItem::linkToCrud('Add Project','fas fa-plus',Project::class)->setAction(Crud::PAGE_NEW),
+        MenuItem::linkToCrud('Show Projects','fas fa-eye',Project::class)
+        ]);
+        yield MenuItem::section('Orders');
+        yield MenuItem::subMenu("Actions", 'fas fa-bars')->setSubItems([
+                MenuItem::linkToCrud('Create Order', 'fas fa-plus', Order::class)->setAction(Crud::PAGE_NEW),
+                MenuItem::linkToCrud('Show Orders', 'fas fa-eye', Order::class)
+            ]);
+
+
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }
