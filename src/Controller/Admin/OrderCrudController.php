@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Order;
+use App\Entity\User;
+use App\Repository\UserRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -28,12 +30,14 @@ class OrderCrudController extends AbstractCrudController
         ->setPageTitle("index", 'Order-Information');
     }
     
+
     public function configureFields(string $pageName): iterable
     {
+        
         return [
             IdField::new('id')->hideOnForm(),
             AssociationField::new('user'),
-            AssociationField::new('project'),
+            TextField::new('ProjectName'),
             DateTimeField::new('updatedAt')->hideOnForm(),
             DateTimeField::new('createdAt')->hideOnForm(),
 
