@@ -19,14 +19,18 @@ class Order
 
 
 
-    #[ORM\ManyToOne(inversedBy: 'orders')]
-    private ?Project $project = null;
+
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $ProjectName = null;
+
+
 
     public function getId(): ?int
     {
@@ -52,17 +56,6 @@ class Order
 
  
 
-    public function getProject(): ?Project
-    {
-        return $this->project;
-    }
-
-    public function setProject(?Project $project): self
-    {
-        $this->project = $project;
-
-        return $this;
-    }
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -87,6 +80,20 @@ class Order
 
         return $this;
     }
+
+    public function getProjectName(): ?string
+    {
+        return $this->ProjectName;
+    }
+
+    public function setProjectName(string $ProjectName): self
+    {
+        $this->ProjectName = $ProjectName;
+
+        return $this;
+    }
+
+ 
 
     
 }

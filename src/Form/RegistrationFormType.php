@@ -30,7 +30,7 @@ class RegistrationFormType extends AbstractType
                 'attr'=>[
                 'autocomplete' => 'email',
                 'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                'placeholder' => 'Email',
+                'placeholder' => 'votre adresse e-mail*',
                 
                 ],
                 'constraints'=>[
@@ -73,7 +73,7 @@ class RegistrationFormType extends AbstractType
             'required' => false,
                 'attr' => [
                     'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                    'placeholder' => 'FullName',
+                    'placeholder' => 'votre nom*',
 
                 ],
             'constraints' => [
@@ -99,7 +99,7 @@ class RegistrationFormType extends AbstractType
             'required' => false,
                 'attr' => [
                     'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                    'placeholder' => 'username',
+                    'placeholder' => 'username*',
 
                 ],
                 'constraints' => [
@@ -123,7 +123,7 @@ class RegistrationFormType extends AbstractType
             'required' => false,
                 'attr' => [
                     'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                    'placeholder' => 'region',
+                    'placeholder' => 'région',
 
                 ],
                 'constraints' => [
@@ -161,7 +161,7 @@ class RegistrationFormType extends AbstractType
             'required' => false,
             'attr' => [
                 'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                'placeholder' => 'phonenumber',
+                'placeholder' => 'votre numero de telephone*',
 
             ],
             'constraints' => [
@@ -187,7 +187,6 @@ class RegistrationFormType extends AbstractType
             'attr' => [
                 'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
                
-
             ],
             'years' => range((int) date('Y') - 120, date('Y')),
             'invalid_message' => 'Please enter a valid birthdate.',
