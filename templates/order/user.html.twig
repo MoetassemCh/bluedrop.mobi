@@ -1,5 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% for message in app.flashes('warning') %}
+	<div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
 
+		{{message}}
+	</div>
+{% endfor %}
+
+<table>
+<thead>
+<th>
+Porject Name
+</th>
+<th>Cost</th>
+</thead>
+<tbody>
+{% for order in user.orders %}
+<tr>
+<td>{{order.ProjectName}}</td>
+<td>{{order.price}}</td>
+<td>{{order.user.username}}</td>
+<td>{{order.user.region}}</td>
+<td>
+{% if order.status == 'progress' %}
+	<span class=" bg-yellow-600 p-2">
+		{{order.status}}
+	</span>
+{% elseif order.status == 'done' %}
+	<span class=" bg-green-600 p-2">
+		{{order.status}}
+	</span>
+{% elseif order.status =='rejected' %}
+	<span class=" bg-red-600 p-2">
+		{{order.status}}
+	</span>
+{% else %}
+<span class=" bg-white">
+{{order.status}}
+</span>
+{% endif %}{% endfor %}
+
+</td>
+
+
+
+
+</tr>
+
+
+</tbody>
+</table>
 {% endblock %}

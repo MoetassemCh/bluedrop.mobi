@@ -37,6 +37,7 @@ class OrderController extends AbstractController
         }
         return $this->render('order/user.html.twig', [
             'user' =>$this->getUser(),
+
         ]);
     }
 
@@ -48,9 +49,22 @@ class OrderController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
+        $orderExist=$this->orderRepository->findOneBy([
+            'user'=>$this->getUser(),
+            'ProjectName'=>$project->getService()
+        ]);
+if($orderExist){
+    $this->addFlash(
+        'warning',
+        'You have already ordered this project'
+    );
+    return $this->redirectToRoute('user_order_list');
+}
+
    $order=new Order();
    $order->setUser($this->getUser());
    $order->setProjectName($project->getService());
+   $order->setPrice($project->getCost());
    $order->setCreatedAt($order->getCreatedAt());
    $this->em->persist($order); 
    $this->em->flush();

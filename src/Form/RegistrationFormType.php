@@ -191,7 +191,6 @@ class RegistrationFormType extends AbstractType
             'years' => range((int) date('Y') - 120, date('Y')),
             'invalid_message' => 'Please enter a valid birthdate.',
         ])
-            
         ;
     }
 

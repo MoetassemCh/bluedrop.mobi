@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
@@ -29,6 +30,12 @@ class Order
 
     #[ORM\Column(length: 255)]
     private ?string $ProjectName = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
+    private ?string $price = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $status = null;
 
 
 
@@ -89,6 +96,30 @@ class Order
     public function setProjectName(string $ProjectName): self
     {
         $this->ProjectName = $ProjectName;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?string $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?string $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }

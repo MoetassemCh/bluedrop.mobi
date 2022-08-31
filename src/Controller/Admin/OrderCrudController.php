@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 class OrderCrudController extends AbstractCrudController
 {
@@ -40,6 +41,15 @@ class OrderCrudController extends AbstractCrudController
             TextField::new('ProjectName'),
             DateTimeField::new('updatedAt')->hideOnForm(),
             DateTimeField::new('createdAt')->hideOnForm(),
+            ChoiceField::new('status')->setChoices([
+                'progress'=> 'progress',
+                'done'=>'done',
+                'rejected'=> 'rejected'
+            ])->renderAsBadges([
+                'progress' => 'warning',
+                'done' => 'success',
+                'rejected' => 'danger'
+            ])
 
         ];
     }
