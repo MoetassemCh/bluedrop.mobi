@@ -1,56 +1,36 @@
-{% extends 'base.html.twig' %}
-
+{% extends "base.html.twig" %}
 
 {% block body %}
+	<div class=" m-auto">
+		<div class="py-10 border-gray-200">
+			<h1 class="text-xl pt-12 pb-8 underline underline-offset-4">
+				Projets récents ({{ projects|length }})
+			</h1>
 
-<div class="w-4/5 m-auto text-center">
-	<div class="py-12 border-b border-gray-200">
-		<h1 class="text-6xl pt-12 pb-8">
-			Project Review
-		</h1>
-
-		<span class="font-light text-gray-500 italic">
-			Created by Code With Dary
-		</span>
+		</div>
 	</div>
-</div>
-
-<div
-	class="md:grid lg:grid-cols-3 gap-20 w-4/8 mx-auto py-15 ">
-	<!-- Review Item -->
-{% for project in projects %}
-
-		<div class="text-center pt-40 pb-4">
-		{% if project.image %}
-<img src="{{absolute_url('upload/images/project/'~project.image)}}" alt="{{project.image}}" class="shadow-xl rounded-md"/>
 
 
-		{% endif %}
+	<div
+		class="md:grid grid-cols-3 gap-20 w-6/5 mx-auto py-15">
+		<!-- Review Item -->
+		{% for project in projects %}
 
-
-
-			<h2 class="text-gray-700 font-bold text-3xl py-2">
-{{ project.service }}
-
-			</h2>
-
-			<span class="text-gray-500">
-				By
-				<span class="italic text-sm text-gray-800">{{project.cost}}
-				</span>
-
-				<p class="text-base text-gray-700 pt-4 pb-10 leading-8 font-light">
-					{{ project.description }}
-				</p>
-
+			<div class="p-6 max-w-sm  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+				<div class="hero container max-w-screen-lg mx-auto pb-10 h-36 w-36">
+					<img src="{{absolute_url('upload/images/project/'~project.image)}}" alt="{{project.image}}">
+				</div>
+				<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 py-2 text-center text-bold">{{ project.service }}</p>
+				<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 py-2 h-40 text-center">{{ project.description }}</p>
+				<p class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white py-3 text-center">Coût
+					{{ project.cost }}$</p>
+				<div class="flex justify-center items-center">
+					<a href="{{path('order_store',{project: project.id})}}" class="inline-block bg-[#2B292D] text-white text-center items-center font-bold rounded-3xl py-3 hover:bg-white hover:text-indigo-700 w-40">
+						Order
+					</a>
+				</div>
 			</div>
-<a href="{{path('order_store',{project: project.id})}}" class="uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded  transition-all hover:bg-gray-800 hover:text-white">
-
-	Order
-</a>
 
 		{% endfor %}
 	</div>
-
-
 {% endblock %}

@@ -2,8 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Notes;
 use App\Entity\Order;
 use App\Entity\Project;
+use App\Entity\Ticket;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -65,7 +67,18 @@ $url=$this->adminUrlGenerator
                 MenuItem::linkToCrud('Show Orders', 'fas fa-eye', Order::class)
             ]);
 
+        yield MenuItem::section('Ticket');
+        yield MenuItem::subMenu("Actions", 'fas fa-bars')->setSubItems([
+                 MenuItem::linkToCrud('Create Ticket', 'fas fa-plus', Ticket::class)->setAction(Crud::PAGE_NEW),
+                 MenuItem::linkToCrud('Show Tickets', 'fas fa-eye', Ticket::class)
+            ]);
 
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+             yield MenuItem::section('Notes');
+             yield MenuItem::subMenu("Actions", 'fas fa-bars')->setSubItems([
+                 MenuItem::linkToCrud('Create Notes', 'fas fa-plus', Notes::class)->setAction(Crud::PAGE_NEW),
+                 MenuItem::linkToCrud('Show Notes', 'fas fa-eye', Notes::class)
+            ]);
+
+
     }
 }

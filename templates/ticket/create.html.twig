@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="w-4/5 m-auto pt-20">
+		<h1 class="text-6xl text-center">
+			N'hésitez pas à toute précosion!
+		</h1>
+	</div>
+
+
+	<div class="flex flex-col justify-center items-center">
+		<div class="flex w-full min-h-screen justify-center items-center">
+			<div class="flex flex-col bg-gray-50 w-full max-w-2xl p-8 py-12 rounded-xl text-black">
+				<div>
+					{{ form_start(ticket_form) }}
+					<div>
+						{{ form_row(ticket_form.contenu)}}
+					</div>
+
+					<div>
+						{{ form_row(ticket_form.description)}}
+					</div>
+					{{ form_widget(ticket_form) }}
+					<button type="submit" class="px-6 py-2 w-auto text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full " onclick="return confirm('votre question est envoyé avec succès! ')">Envoyer</button>
+					<a class="px-6 py-2 text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full " href="/user/tickets">
+						Back
+					</a>
+					{{ form_end(ticket_form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
