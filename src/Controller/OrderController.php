@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+#[IsGranted('ROLE_USER')]
 class OrderController extends AbstractController
 {
     private $orderRepository;
@@ -20,13 +22,6 @@ class OrderController extends AbstractController
     {
         $this->orderRepository = $orderRepository;
         $this->em = $doctrine->getManager();
-    }
-    #[Route('/order', name: 'app_order')]
-    public function index(): Response
-    {
-        return $this->render('order/index.html.twig', [
-            'controller_name' => 'OrderController',
-        ]);
     }
 
     #[Route('/user/orders', name: 'user_order_list')]
@@ -56,7 +51,7 @@ class OrderController extends AbstractController
 if($orderExist){
     $this->addFlash(
         'warning',
-        'You have already ordered this project'
+        'Vous avez déjà commandé ce projet'
     );
     return $this->redirectToRoute('user_order_list');
 }
@@ -68,11 +63,22 @@ if($orderExist){
    $order->setCreatedAt($order->getCreatedAt());
    $this->em->persist($order); 
    $this->em->flush();
-    $this->addFlash(
-        'success',
-        'your order saved'
-    );   
+    // $this->addFlash(
+    //     'success',
+    //     'your order saved'
+    // );   
 return $this->redirectToRoute('user_order_list');
     }
+
+    #[Route('/order/delete/{id}', methods: ['Get', 'DELETE'], name: 'delete_order')]
+    public function delete($id): Response
+    {
+        $order = $this->orderRepository->find($id);
+        $this->em->remove($order);
+        $this->em->flush();
+
+        return $this->redirectToRoute('user_order_list');
+    }
+
 
 }

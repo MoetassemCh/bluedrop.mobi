@@ -30,12 +30,6 @@ class ContactController extends AbstractController
                 ->from($contactFormData['email'])
                 ->to('contact@bluedrop.fr')
                 ->subject('You got mail')
-                // ->text(
-                //     'Sender : ' . $contactFormData['email'] . \PHP_EOL .
-                //     $contactFormData['message'],
-                //     $contactFormData['phonenumber'],
-                //     'text/plain'
-                // );
             ->htmlTemplate('contact/mail.html.twig')
            ->context([
                 'fullName'=>$contactFormData['fullName'],

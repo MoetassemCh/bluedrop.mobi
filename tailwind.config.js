@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./assets/**/*.{vue,js,ts,jsx,tsx}",
     "./templates/**/*.{html,twig}",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     screens: {
@@ -17,5 +18,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [require("@tailwindcss/aspect-ratio"), require("flowbite/plugin")],
 };

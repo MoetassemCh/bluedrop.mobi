@@ -42,13 +42,13 @@ class OrderCrudController extends AbstractCrudController
             DateTimeField::new('updatedAt')->hideOnForm(),
             DateTimeField::new('createdAt')->hideOnForm(),
             ChoiceField::new('status')->setChoices([
-                'progress'=> 'progress',
-                'done'=>'done',
-                'rejected'=> 'rejected'
+                'progrès'=> 'progrès',
+                'fini'=> 'fini',
+                'rejeté'=> 'rejeté'
             ])->renderAsBadges([
-                'progress' => 'warning',
-                'done' => 'success',
-                'rejected' => 'danger'
+                'progrès' => 'warning',
+                'fini' => 'success',
+                'rejeté' => 'danger'
             ])
 
         ];

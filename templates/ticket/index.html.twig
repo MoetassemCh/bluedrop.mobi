@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
+{% block body %}
+
+	{# section #}
+	<section class="bg-[#f8f8f8] space-y-4 w-full lg:h-[200px] md:h-full sm:h-ful">
+
+
+		<div class="text-2xl justify-center text-center items-center font-semibold lg:text-6xl  md:text-3xl sm:text-2xl">
+
+
+			<p>Vous avez des questions</p>
+
+			<p>spécifiques?</p>
+
+		</div>
+
+	</section>
+
+	{# section.end #}
+
+
+	{# section #}
+
+	<div class="z-0 flex flex-col justify-center items-center lg:-mt-14 md:-mt-5 sm:mt-8 inset-1">
+
+		<img class="h-50 inline" src="">
+
+	</div>
+
+	<div class="mt-[150px] flex justify-center">
+		<a class="px-6 py-2 text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full " href="/tickets/create">
+			Quelle Question?
+		</a>
+		<a class="px-6 ml-[10px] py-2 text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full " href="/user/notes">
+			Notre Notes
+		</a>
+	</div>
+
+
+{% endblock %}

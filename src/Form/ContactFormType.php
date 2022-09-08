@@ -49,9 +49,14 @@ class ContactFormType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'ring-2 ring-[#2B292D] w-full rounded-3xl px-4 py-2 outline-none placeholder-gray-500',
-                    'placeholder' => 'votre numero de telephone*',
+                'placeholder' => 'telephone**-****-****',
                 ],
-       
+            'constraints' => [
+                new Regex([
+                    'pattern' => '/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/',
+                    'message' => ' Enter a valid Phone Number'
+                ])
+            ],
             ])
             ->add('selectpack',ChoiceType::class,[
                 'label'=>false,

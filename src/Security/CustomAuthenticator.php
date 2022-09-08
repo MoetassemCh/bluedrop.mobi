@@ -47,10 +47,12 @@ class CustomAuthenticator extends AbstractLoginFormAuthenticator
         }
 
 
+        
 
         if ($token->getUser()->isAdmin()) {
          return new RedirectResponse($this->urlGenerator->generate('app_admin'));
          }
+
          
         return new RedirectResponse($this->urlGenerator->generate('app_home'));
     }

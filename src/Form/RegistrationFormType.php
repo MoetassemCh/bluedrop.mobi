@@ -86,12 +86,13 @@ class RegistrationFormType extends AbstractType
                     // max length allowed by Symfony for security reasons
                     'max' => 4096,
                 ]),
-                new Regex([
-                   'pattern'=>'/^\S*$/',
-                   'message'=> 'Your name cannot have space' 
-                ])
+                // new Regex([
+                //    'pattern'=>'/^\S*$/',
+                //    'message'=> 'Your name cannot have space' 
+                // ])
             ],
             ])
+
 
             ->add('username', TextType::class, [
 
@@ -140,28 +141,15 @@ class RegistrationFormType extends AbstractType
             ])
 
 
-            // ->add('image', FileType::class, [
+       
 
-            //     'label' => false,
-            //     'mapped'=>false,
-            //     'attr' => [
-            //         'class' => 'block border border-[#2B292D] placeholder-[#605F61] w-full h-full p-3 rounded-3xl mb-4',
-            //     ],
-
-            //     ])
-
-
-
-
-
-
-        ->add('phonenumber', IntegerType::class, [
+        ->add('phonenumber', TextType::class, [
 
             'label' => false,
             'required' => false,
             'attr' => [
                 'class' => 'block border border-[#2B292D] placeholder-[#605F61] border-2  w-full h-full p-3 rounded-3xl mb-4',
-                'placeholder' => 'votre numero de telephone*',
+                'placeholder' => 'telephone**-****-****',
 
             ],
             'constraints' => [
@@ -174,8 +162,13 @@ class RegistrationFormType extends AbstractType
                     // max length allowed by Symfony for security reasons
                     'max' => 15,
                 ]),
+                 new Regex([
+                    'pattern'=>'/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/',
+                    'message'=> ' Enter a valid Phone Number' 
+                 ])
             ],
         ])
+
 
         ->add('DOB', BirthdayType::class, [
 

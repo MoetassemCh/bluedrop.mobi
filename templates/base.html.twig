@@ -26,8 +26,10 @@
 
 	</head>
 
+
+
 	<body class="overflow-x-hidden">
-		<div class="accueil-1 rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
+		<div class="bg-[#f8f8f8] top-6 h-[166px] rounded-tl-3xl  rounded-tr-3xl ml-6 mr-6 mt-6">
 <a href="" class="animate-bounce absolute lg:right-[270px] lg:top-28 arrow md:top-32 md:right-24 ">
 	<img src="{{asset('build/images/Frame 1860.ef0efac2.png')}}" alt="">
 </a>
@@ -38,7 +40,7 @@
 						<a href="/" class="gap-3 items-center  flex flex-row ">
 							<img src="{{asset('build/images/logo.0bc07af2.png')}}" alt="" class="w-10 h-10">
 							<div>
-								<span class="text-2xl text-color font-semibold">
+								<span class="text-2xl text-[#2B292D] font-semibold">
 									bluedrop.
 								</span>
 								<span class="text-2xl font-normal">
@@ -51,7 +53,7 @@
 
 					</div>
 
-<div class="hidden items-center lg:space-x-6 md:space-x-2 text-[#2B292D]  font-semibold text-base md:flex text-color">
+<div class="hidden items-center lg:space-x-6 md:space-x-2 text-[#2B292D]  font-semibold text-base md:flex">
 
 
 						<a href="{{url('app_presentation')}}" class="tracking-widest hover:text-indigo-700">
@@ -64,17 +66,6 @@
 							Tarifs
 						</a>
 						
-{# {% if is_granted('ROLE_ADMIN') %}
-<select onchange="window.location.href=this.value;" class="tracking-widest hover:text-indigo-700">
-	<option selected>
-		Dashboard
-	</option>
-	<option value="/admin/dashboard">
-		page
-	</option>
-</select>
-
-{% endif %} #}
 
 
 
@@ -87,14 +78,18 @@
 {% if app.user %}
 
 <select onchange="window.location.href=this.value;"  class="lg:px-6 md:px-2 py-2 w-full text-center whitespace-nowrap bg-[#2B292D]  hover:bg-white hover:text-indigo-700 text-white rounded-full">
-<option selected>
+<option value="/" selected>
 {{app.user.Fullname}}
 </option>
-<option>
-	<a href="">
-		Project<i class="fas fa-user w-6 h-6"></i>
-	</a>
+<option value="/project">
+	Projet<i class="fas fa-user w-6 h-6"></i>
 </option>
+
+<option value="/user/tickets">
+	Posez une question
+
+</option>
+
 <option value="/logout">
 Logout
 </option>
@@ -124,7 +119,7 @@ Logout
 				<div id="menu" class="fixed hidden inset-0 mt-5 z-20  flex-col items-center self-end w-full h-full min-h-screen px-6 py-1 pt-24 pb-4 tracking-widest  text-white opacity-90 bg-gray-500">
 
 					<div class="w-full py-3 text-center">
-						<a href="" class="block hover:text-indigo-700" id="Présentation">Présentation</a>
+						<a href="/presentation" class="block hover:text-indigo-700" id="Présentation">Présentation</a>
 
 					</div>
 
@@ -145,18 +140,21 @@ Logout
 <div class="w-full py-3 text-center">
 {% if app.user %}
 <div class="w-full py-3 text-center">
-	<a href="/" class="block hover:text-indigo-700">Project</a>
+<a href="/project" class="block hover:text-indigo-700">Project</a>
 </div>
+
+<div class="w-full py-3 text-center">
+<a href="/user/tickets" class="block hover:text-indigo-700">Posez une question</a>
+
+</div>
+
 <a href="/logout" class="block hover:text-indigo-700">Logout</a>
 
 {% else %}
 <a href="/login" class="block hover:text-indigo-700">Login</a>
 
 {% endif %}
-{# 
-{% if is_granted('ROLE_ADMIN') %}
-<a href="/admin/dashboard" class="block hover:text-indigo-700">Page</a>	
-{% endif %} #}
+
 </div>
 
 
@@ -164,10 +162,44 @@ Logout
 			</nav>
 
 			{% block body %}{% endblock %}
+
+
+{# section #}
+<footer
+	class=" py-8 bg-[#2B292D] my-7 rounded-br-3xl rounded-bl-3xl">
+
+	<!-- Footer Flex Container -->
+	<div class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
+		<div class="flex flex-col items-center justify-between space-y-8 text-lg font-semibold md:flex-row md:space-y-0 md:space-x-14 text-[#2b292d]">
+			<img src="{{asset('build/images/Favicon.78e20fef.png')}}" alt="" class="mb-1"/>
+			<span class=" text-white font-semibold">bluedrop.mobi</span>
+
+		</div>
+
+		<div class="flex text-zinc-500">
+			<span>&copy
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+				Copyright -</span>
+
+
+			<a>Tous droits réservés -
+				<a class="underline" href="https://www.bluedrop.fr/mentions-legales-bluedrop">Mentions légales</a>
+			</a>
+
+
+		</div>
+	</div>
+</footer>
+{# end.section #}
+
 		</div>
 
 	</body>
-	
+
+
+
 {% block javascripts %}
 {{ encore_entry_script_tags('app') }}
 {% endblock %}

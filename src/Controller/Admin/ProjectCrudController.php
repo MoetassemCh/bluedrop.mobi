@@ -62,7 +62,7 @@ class ProjectCrudController extends AbstractCrudController
                 ->setBasePath(self::PUBLICS_BASE_PATH)
                 ->setUploadDir(self::PUBLICS_UPLOAD_DIR)
                 ->setSortable(false),
-            MoneyField::new('cost')->setCurrency('EUR'),
+            MoneyField::new('cost')->setCurrency('USD'),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm()
          

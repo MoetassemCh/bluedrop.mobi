@@ -3,33 +3,23 @@
 @tailwind utilities;
 
 
-.text-color{
-color: #2B292D;
-}
-
-.w-container{
+/* .w-container{
 width: 1330px;
 height: 104px;
-}
-
+} */
+/* 
 .accueil-1{
 background-color: #f8f8f8;
 height: 166px;
 top: 24px;
-}
-.accueil-2{
+} */
+
+
+/* .nav-bg{
 background-color: #f8f8f8;
-height: 570px;
+} */
 
-}
 
-.nav-bg{
-background-color: #f8f8f8;
-}
-
-.button-color{
-background-color: #2B292D;
-}
 
 .hamburger {
   cursor: pointer;
