@@ -12,9 +12,8 @@
 
     # Rewrite all other queries to the front controller.
     RewriteRule .? %{ENV:BASE}/index.php [L]
-</IfModule>
 
-##Force SSL 
+    ##Force SSL 
 
 #Normal way (in case you need to deploy to NON-heroku)
 RewriteCond %{HTTPS} !=on
@@ -24,3 +23,5 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 
 #If neither above conditions are met, redirect to https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
