@@ -46,6 +46,7 @@ public function updateEntity(EntityManagerInterface $entityManager, $entityInsta
 {
         if (!$entityInstance instanceof Ticket) return;
         $entityInstance->setUpdatedAt(new \DateTimeImmutable);
+        
 }
 
 
